@@ -11,7 +11,7 @@ def is_even(value):
 
 user_input = int(sys.argv[1])
 result = is_even(user_input)
-return result
+print(result)
 # print("Hello World!")
 
 # print(str(user_input))
