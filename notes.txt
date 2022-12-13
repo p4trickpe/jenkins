@@ -1,1 +1,16 @@
-test
+#!/bin/bash
+# echo "Hello world!"
+echo "The build ID of this job is ${BUILD_ID}"
+echo "The build URL is ${BUILD_URL}"
+
+start=1
+end=10
+#python3 main.py $shots >> test.txt
+
+for i in $(eval echo "{$start..$end}")
+do
+	# python3 main.py $i 2>&1 | tee -a test.txt | read result
+    python3 main.py $i >> test.txt
+    boolean=$(tail -1 test.txt)
+    echo $boolean
+done
